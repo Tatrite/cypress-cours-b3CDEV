@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cypher</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Caesar Cypher</h1>
+        <p class="sub">Vanilla JS</p>
+
+        <h2>Cypher key</h2>
+
+        <form id="cypherForm">
+            <input
+                type="number"
+                id="key"
+                min="1"
+                max="25"
+                value="6"
+                required
+            >
+
+            <textarea
+                id="message"
+                rows="6"
+                required
+            >Hello World!</textarea>
+
+            <button type="submit">Cypher</button>
+        </form>
+
+        <p id="output">
+            <span></span>
+        </p>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
