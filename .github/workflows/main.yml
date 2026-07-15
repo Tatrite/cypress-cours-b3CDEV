@@ -1,12 +1,41 @@
 name: cypress-ci
-on: push
+on:
+  push:
+
 jobs:
-  cypress-run:
-    runs-on: ubuntu-24.04
+  cypress:
+    runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v6
-      # Install dependencies with caching
-      # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v7
+      - name: Récupération du code
+        uses: actions/checkout@v4
+
+      - name: Installation de Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Exécution des tests Cypress for Hello-World
+        uses: cypress-io/github-action@v6
+        with:
+          start: npx http-server . -p 8080 -s
+          wait-on: 'http://localhost:8080/lightbox.html'
+          wait-on-timeout: 60
+          browser: chrome
+          spec: cypress/e2e/helloWorld.cy.js
+
+      - name: Archivage des screenshots (en cas d'échec)
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+          if-no-files-found: ignore
+
+      - name: Archivage des vidéos
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: cypress-videos
+          path: cypress/videos
+          if-no-files-found: ignore
