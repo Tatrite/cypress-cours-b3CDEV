@@ -4,7 +4,7 @@ describe('Lightbox - Alpine JS / Tailwind', () => {
 
   beforeEach(() => {
     // Adapter l'URL selon l'endroit où le fichier est servi
-    cy.visit('../../lightbox.html');
+    cy.visit('../../lightbox/lightbox.html');
   });
 
     const overlaySelector = '.relative.w-64';
