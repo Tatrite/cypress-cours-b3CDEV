@@ -1,4 +1,4 @@
-name : Cypress Test CI for Ceasar.html
+name : cypress-ci - Ceasar
 
 on:
   push:

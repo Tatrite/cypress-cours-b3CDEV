@@ -1,4 +1,4 @@
-name: cypress-ci for helloWorld
+name: cypress-ci - helloWorld
 on:
   push:
 

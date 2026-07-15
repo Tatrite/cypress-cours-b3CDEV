@@ -1,4 +1,4 @@
-name: Tests Cypress - Lightbox
+name: cypress-ci - Lightbox
 
 on:
   push:
