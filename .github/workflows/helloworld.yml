@@ -19,7 +19,7 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           start: npx http-server . -p 8080 -s
-          wait-on: 'http://localhost:8080/lightbox.html'
+          wait-on: 'http://localhost:8080/app/index.html'
           wait-on-timeout: 60
           browser: chrome
           spec: cypress/e2e/helloWorld.cy.js
