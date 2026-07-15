@@ -22,7 +22,7 @@ jobs:
           wait-on: 'http://localhost:8080/app/index.html'
           wait-on-timeout: 60
           browser: chrome
-          spec: helloWorld.cy.js
+          spec: cypress/e2e/helloWorld.cy.js
 
       - name: Archivage des screenshots (en cas d'échec)
         uses: actions/upload-artifact@v4
